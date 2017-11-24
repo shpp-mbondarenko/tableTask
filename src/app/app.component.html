@@ -1,15 +1,15 @@
 <table>
- <!--  <tr>
-    <th *ngFor="let val of labelsList">{{val}}</th>
-  </tr> -->
-  <!-- <tr *ngFor="let val of labelsList">
-    <app-td-block ></app-td-block>
-  </tr> -->
-  <tr>
-    <app-td-block></app-td-block>
-  </tr>
+  <thead>
+    <app-tr-block *ngFor="let val of labelsList"></app-tr-block>
+  </thead>
+  <tbody>    
+    <app-tr-block *ngFor="let val of labelsList"></app-tr-block>
+  </tbody>
 </table>
 
+  <!-- <tr>
+    <app-td-block></app-td-block>
+  </tr> -->
 <!-- <br>
 <table>
   <tr>

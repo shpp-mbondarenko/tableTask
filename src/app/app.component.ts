@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   labelsList = ['Label1','Label2','Label3','Label4'];
+  numOfRows = 7;
 }

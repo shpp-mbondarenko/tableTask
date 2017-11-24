@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
 	selector: 'app-td-block',
@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TdBlockComponent implements OnInit {
 	constructor() {
-		document.addEventListener('keyup', function(e: KeyboardEvent) {
-			console.log('---key code is - ', e.keyCode);
-		});
-		var cells = document.getElementsByTagName('td');
+		// document.addEventListener('keyup', function(e: KeyboardEvent) {
+		// 	console.log('---key code is - ', e.keyCode);
+		// });
+		// // var cells = document.getElementsByTagName('td');
 		// cells[0].focus();
-		document.getElementById('target').focus();
+		// document.getElementById('target').focus();
+	}
+
+	@HostListener("keydown.enter") onMouseEnter() {
+        console.log("in Handler");
+   }
+	@HostListener('document:click', ['$event']) onMouseEnter2(e) {
+	    console.log("in Handler2", e);
 	}
 
 	ngOnInit() {
@@ -26,14 +33,15 @@ export class TdBlockComponent implements OnInit {
 		var inp = document.createElement('input');
 		inp.setAttribute('id', 'userInputText');
 		inp.setAttribute('title', 'Enter your value');
-		inp.addEventListener('keyup', function(e: KeyboardEvent) {
-			console.log('Tab PRESSED!!!111');
-			if (e.keyCode == 9) {
-			console.log('Tab PRESSED!!!');
-			var parent = event.target.parentNode;
-			event.target.nextElementSibling.focus();
-		}
-		});
+
+		// inp.addEventListener('keyup', function(e: KeyboardEvent) {
+		// 	console.log('Tab PRESSED!!!111');
+		// 	if (e.keyCode == 9) {
+		// 	console.log('Tab PRESSED!!!');
+		// 	var parent = event.target.parentNode;
+		// 	event.target.nextElementSibling.focus();
+		// }
+		// });
 		event.srcElement.innerHTML = '';
 		event.target.append(inp);
 		// console.log("CHILD NODES ", event.srcElement.childNodes[0].innerText);
@@ -60,7 +68,7 @@ export class TdBlockComponent implements OnInit {
 
 	onKeyPressed(event: KeyboardEvent){
 		console.log('Tab PRESSED!!!111');
-		if (event.keyCode === 32) {
+		if (event.keyCode === 9) {
 			console.log('Tab PRESSED!!!');
 			// var parent = event.target.parentNode;
 			// parent.nextElementSibling.focus();
