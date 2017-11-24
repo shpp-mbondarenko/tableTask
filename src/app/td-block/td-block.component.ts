@@ -10,6 +10,9 @@ export class TdBlockComponent implements OnInit {
 		document.addEventListener('keyup', function(e: KeyboardEvent) {
 			console.log('---key code is - ', e.keyCode);
 		});
+		var cells = document.getElementsByTagName('td');
+		// cells[0].focus();
+		document.getElementById('target').focus();
 	}
 
 	ngOnInit() {
@@ -59,8 +62,8 @@ export class TdBlockComponent implements OnInit {
 		console.log('Tab PRESSED!!!111');
 		if (event.keyCode === 32) {
 			console.log('Tab PRESSED!!!');
-			var parent = event.target.parentNode;
-			parent.nextElementSibling.focus();
+			// var parent = event.target.parentNode;
+			// parent.nextElementSibling.focus();
 		}
 	}
 }

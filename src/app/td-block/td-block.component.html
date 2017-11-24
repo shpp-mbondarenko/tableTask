@@ -1,6 +1,7 @@
 
 <tr>
-	<td (click)="onElementDblClick($event)" (focusout)="onElementLostFocus($event)">
+	<td id="target" (click)="onElementDblClick($event)" (focusout)="onElementLostFocus($event)"
+	(focus)="onElementFocus($event)">
 	  td-blockworks1 
 	</td>
 	<td (click)="onElementDblClick($event)" (focusout)="onElementLostFocus($event)"
