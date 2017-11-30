@@ -2,12 +2,13 @@
   <thead>
     <app-tr-block *ngFor="let val of labelsList"></app-tr-block>
   </thead>
-  <tbody>    
-    <app-tr-block *ngFor="let val of labelsList"></app-tr-block>
+  <tbody>
+    <app-tr-block *ngFor="let val of labelsList; let i = index" [ngClass]="{'tdOnFocus': i==0}">
+    </app-tr-block>
   </tbody>
 </table>
 
-  <!-- <tr>
+<!-- <tr>
     <app-td-block></app-td-block>
   </tr> -->
 <!-- <br>
